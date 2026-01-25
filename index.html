@@ -1,0 +1,15 @@
+<body style="margin:0;background:black;overflow:hidden">
+<img id="g" src="boy.gif" style="position:absolute;width:100px;height:100px">
+<script>
+let x=Math.random()*(innerWidth-100),y=Math.random()*(innerHeight-100),vx=2.5,vy=2.5;
+let g=document.getElementById("g");
+function a(){
+x+=vx;y+=vy;
+if(x<=0||x+100>=innerWidth)vx*=-1;
+if(y<=0||y+100>=innerHeight)vy*=-1;
+g.style.transform=`translate(${x}px,${y}px)`;
+requestAnimationFrame(a)}
+a();
+onresize=()=>{x=Math.min(x,innerWidth-100);y=Math.min(y,innerHeight-100);}
+</script>
+</body>
